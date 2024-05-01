@@ -1,6 +1,4 @@
 Q5----------------------------------------------
----Sales per week
-
 sales_per_week = [15000, 20000, 25000, 30000]
 
 -- Calculate total sales
