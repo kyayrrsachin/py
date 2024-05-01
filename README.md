@@ -1,192 +1,41 @@
---------------------Q1
+Q5----------------------------------------------
+---Sales per week
 
-a=5
+sales_per_week = [15000, 20000, 25000, 30000]
 
-b=6
+-- Calculate total sales
 
-addition= a+b
+total_sales = sum(sales_per_week)
 
-substraction= a-b
+-- Calculate commission
+c
+ommission = total_sales * 0.05 if total_sales >= 50000 else 0
 
-multiplication= a*b
+-- Determine remarks
 
-print("arithmetic operators:")
-
-print("a=5 b=6")
-
-print("addition:",addition)
-
-print("substraction:",substraction)
-
-print("multiplication:",multiplication)
-
-x=True
-
-y=False
-
-logical_and= x and y
-
-logical_or= x or y
-
-logical_not= not x
-
-print("\nlogical operators:")
-
-print("x=true y=false")
-
-print("logical AND:",logical_and)
-
-print("logical OR:",logical_or)
-
-print("logical NOT:",logical_not)
-
-m=10
-
-n=5
-
-bitwise_and= m&n
-
-bitwise_or= m|n
-
-bitwise_xor= m^n
-
-print("\nbitwise operator:")
-
-print("m=10 n=5")
-
-print("bitwise AND:",bitwise_and)
-
-print("bitwise OR:",bitwise_or)
-
-print("bitwise XOR:",bitwise_xor)
-
-p=6
-
-q=9
-
-greater_than= p>q
-
-less_than_or_equal_to= p<=q
-
-equal_to= p==q
-
-print("\nrealtional operator")
-
-print("p=6 q=9")
-
-print("greater than:",greater_than)
-
-print("less than or equal to:",less_than_or_equal_to)
-
-print("equal to:",equal_to)
-
----------------------------------Q2 
-
-------(a)
-
-row = int(input("enter the number of rows: "))
-
-for i in range (row):
+if total_sales >= 80000:
     
-    print(" "*(row-i)+" *"*(i+1))
+    remarks = "Excellent"
 
-for j in range(row-1):
+elif total_sales >= 60000:
    
-    print(" "*(j+2)+" *"*(row-1-j))
+    remarks = "Good"
 
-------(b)
-
-rows=int(input("enter the number of rows: "))
-
-for i in range(1,rows+1):
-
-    for j in range(rows-i):
-      
-        print(" ",end="")
+elif total_sales >= 40000:
   
-    for k in range(i,2*i):
-       
-        print(k,end="")
-    
-    for l in range(2*i-2,i-1,-1):
-       
-        print(l,end="")
-   
-    print()
-
-
-------------------------Q3
-
-import math
-
-print("Pi:", math.pi) 
-
-angle = math.radians(45)
-
-print("Sine of 45 degrees:", math.sin(angle))
-
-print("Cosine of 45 degrees:", math.cos(angle))
-
-
-print("Natural logarithm of 10:", math.log(10))
-
-print("Exponential of 2:", math.exp(2))
-
-print("2 raised to the power of 3:", math.pow(2, 3)) 
-
-print("Square root of 16:", math.sqrt(16))
-
-print("Ceiling of 4.5:", math.ceil(4.5)) 
-
-print("Floor of 4.5:", math.floor(4.5))
-
-
-Q4-------------------
-
-import math
-
--Input lengths of the sides from the user
-
-side1 = float(input("Enter the length of side1: "))
-
-side2 = float(input("Enter the length of side2: "))
-
-side3 = float(input("Enter the length of side3: "))
-
-- Check triangle inequality theorem
-
-if side1 + side2 > side3 and side2 + side3 > side1 and side1 + side3 > side2:
-
-    s = (side1 + side2 + side3) / 2
-
-    - Calculate area using Heron's formula
-    
-    area = math.sqrt(s * (s - side1) * (s - side2) * (s - side3))
-    
-    print("Area of the triangle:", area)
+    remarks = "Average"
 
 else:
-   
-    print("The sum of the lengths of any two sides is not greater than the third side.")
+  
+    remarks = "Work Hard"
 
+-- Output results
 
----------------------Q6
+print("Total Sales:", total_sales)
 
-num = int(input("Enter a number to compute its factorial: "))
+print("Commission:", commission)
 
-if num < 0:
-    
-    print("Factorial is not defined for negative numbers.")
-
-else:
-    
-    result = 1
-    
-    for i in range(1, num + 1):
-       
-        result *= i
-    
-    print("Factorial of", num, "is:", result)
+print("Remarks:", remarks)
 
 ---------------------Q6
 
@@ -302,42 +151,93 @@ else:
        
         print(number, "is not a prime number")
 
+----------------------Q-11
 
-Q5----------------------------------------------
----Sales per week
+import math 
 
-sales_per_week = [15000, 20000, 25000, 30000]
+def series(x,n):
+    sum= 1
+    term= 1
+    y=2
 
--- Calculate total sales
+    for i in range(1,n): 
+        fct= 1
+        for j in range(1,y+1):
+            fct= fct*j
 
-total_sales = sum(sales_per_week)
+        term= term*(-1)
+        m=term*math.pow(x,y)/fct
+        sum=sum+m
+ 
+    return sum
 
--- Calculate commission
-c
-ommission = total_sales * 0.05 if total_sales >= 50000 else 0
+x= 9
+n=10
+print('%.4f'% series(x,n))
 
--- Determine remarks
+-------------------------Q-12
 
-if total_sales >= 80000:
-    
-    remarks = "Excellent"
+str1= input("enter the first string: ")
+str2= input("enter the first string: ")
 
-elif total_sales >= 60000:
-   
-    remarks = "Good"
 
-elif total_sales >= 40000:
-  
-    remarks = "Average"
+match_count = 0
 
+
+for char in str1:
+    if char in str2:
+        match_count +=1
+
+print("number of matching characters:", match_count)
+
+----------------------------------Q-13
+
+string= input("enter a string: ")
+
+print("reversed string: ",string[::-1])
+
+---------------------------------Q-14
+
+string= input("enter a string: ")
+
+if string == string[::-1]:
+    print("the string is palindrome")
 else:
-  
-    remarks = "Work Hard"
+    print("the string is not a palindrome")
 
--- Output results
+--------------------------Q-15
 
-print("Total Sales:", total_sales)
+def matrix_operation(matrix1, matrix2, operation):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        return "Matrices are not compatible for the operation"
+    
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix1[0])):
+            row.append(operation(matrix1[i][j], matrix2[i][j]))
+        result.append(row)
+    
+    return result
 
-print("Commission:", commission)
+# Example matrices
+matrix_a = [[1, 2, 3],
+            [4, 5, 6],
+            [7, 8 ,9]]
+            
+matrix_b = [[9,8,7],
+            [6,5,4],
+            [3,2,1]]
 
-print("Remarks:", remarks)
+# Calculate and print sum
+print("Sum of matrices:")
+print(matrix_operation(matrix_a, matrix_b, lambda x, y: x + y))
+
+# Calculate and print product
+print("\nProduct of matrices:")
+print(matrix_operation(matrix_a, matrix_b, lambda x, y: x * y))
+
+
+
+
+
