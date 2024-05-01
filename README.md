@@ -6,8 +6,7 @@ sales_per_week = [15000, 20000, 25000, 30000]
 total_sales = sum(sales_per_week)
 
 -- Calculate commission
-c
-ommission = total_sales * 0.05 if total_sales >= 50000 else 0
+commission = total_sales * 0.05 if total_sales >= 50000 else 0
 
 -- Determine remarks
 
@@ -40,18 +39,15 @@ print("Remarks:", remarks)
 num = int(input("Enter a number to compute its factorial: "))
 
 if num < 0:
-   
-    print("Factorial is not defined for negative numbers.")
-
+ print("Factorial is not defined for negative numbers.")
 else:
+ result = 1
+
+for i in range(1, num + 1):
     
-    result = 1
-    
-    for i in range(1, num + 1):
-        
-        result *= i
-   
-    print("Factorial of", num, "is:", result)
+    result *= i
+
+print("Factorial of", num, "is:", result)
 
 Q7--------------------------
 
